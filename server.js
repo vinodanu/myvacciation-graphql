@@ -9,6 +9,8 @@ const app = express();
 const AdministratorModel = require('./model/adminstrator.model')
 app.use(cors());
 
+const PORT = process.env.PORT || 9090;
+
 const administrators = [];
 
 const patients = [
@@ -117,4 +119,5 @@ app.use('/gq', graphqlHTTP({
     graphiql : true
 }))
 
-app.listen(9090, () => console.log("server started at port : 9090"))
+
+app.listen(PORT, () => console.log("server started at port : 9090"))
